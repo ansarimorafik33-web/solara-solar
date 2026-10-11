@@ -1,5 +1,8 @@
-[
-  { "name": "ISO 9001 Quality", "detail": "Certified quality systems" },
-  { "name": "PV Installer Standard", "detail": "Solar installation compliance" },
-  { "name": "Battery Safety", "detail": "System safety and commissioning" }
-]
+{
+  "hours": [
+    { "label": "Monday — Friday", "value": "08:00 — 18:00" },
+    { "label": "Saturday", "value": "09:00 — 13:00" },
+    { "label": "Sunday", "value": "By appointment" }
+  ],
+  "mapLabel": "Solara Studio — Lisbon"
+}

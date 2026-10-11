@@ -19,10 +19,24 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const isProd = process.env.NODE_ENV === 'production';
-
 const submissionsPath = path.join(__dirname, 'data', 'submissions.json');
 
-const SITE = JSON.parse(await fs.readFile(path.join(__dirname, 'data', 'site.json'), 'utf8'));
+async function readJson(filePath) {
+  try {
+    return JSON.parse(await fs.readFile(filePath, 'utf8'));
+  } catch {
+    return [];
+  }
+}
+
+async function ensureDataFiles() {
+  const dir = path.join(__dirname, 'data');
+  await fs.mkdir(dir, { recursive: true });
+  await fs.writeFile(submissionsPath, JSON.stringify([], null, 2));
+}
+
+await ensureDataFiles();
+const SITE = await readJson(path.join(__dirname, 'data', 'site.json'));
 
 const formLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -47,39 +61,29 @@ function sanitizeString(value) {
   return escapeHtml(value.trim());
 }
 
-function createSubmissionPayload(body, type) {
+function createSubmission(type, payload) {
   return {
-    id: crypto.randomUUID ? crypto.randomUUID() : `sub-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    id: globalThis.crypto && crypto.randomUUID ? crypto.randomUUID() : `sub-${Date.now()}-${Math.random().toString(16).slice(2)}`,
     type,
-    name: sanitizeString(body.name),
-    email: sanitizeString(body.email).toLowerCase(),
-    phone: sanitizeString(body.phone),
-    propertyType: sanitizeString(body.propertyType),
-    message: sanitizeString(body.message),
+    name: sanitizeString(payload.name),
+    email: sanitizeString(payload.email).toLowerCase(),
+    phone: sanitizeString(payload.phone),
+    propertyType: sanitizeString(payload.propertyType),
+    message: sanitizeString(payload.message),
     createdAt: new Date().toISOString()
   };
 }
 
-async function appendSubmission(type, body) {
-  let entries = [];
-  try {
-    const raw = await fs.readFile(submissionsPath, 'utf8');
-    entries = JSON.parse(raw || '[]');
-  } catch (error) {
-    entries = [];
-  }
-
-  entries.push(createSubmissionPayload(body, type));
+async function appendSubmission(type, payload) {
+  const entries = await readJson(submissionsPath);
+  entries.push(createSubmission(type, payload));
   await fs.writeFile(submissionsPath, JSON.stringify(entries, null, 2));
 }
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(helmet({
-  contentSecurityPolicy: false,
-  crossOriginEmbedderPolicy: false
-}));
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 app.use(compression());
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false, limit: '1mb' }));
@@ -100,13 +104,8 @@ app.use('/vendor', express.static(path.join(__dirname, 'node_modules'), {
 
 app.use((req, res, next) => {
   res.locals.site = SITE;
-  res.locals.path = req.path;
   res.locals.currentYear = new Date().getFullYear();
-  res.locals.nav = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' }
-  ];
+  res.locals.path = req.path;
   next();
 });
 

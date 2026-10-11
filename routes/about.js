@@ -13,28 +13,19 @@ async function readJson(fileName) {
 }
 
 router.get('/', async (req, res) => {
-  const data = await Promise.all([
+  const [site, team, values, certifications] = await Promise.all([
     readJson('site.json'),
-    readJson('services.json'),
-    readJson('projects.json'),
-    readJson('testimonials.json'),
-    readJson('faq.json'),
-    readJson('stats.json'),
     readJson('team.json'),
-    readJson('values.json')
+    readJson('values.json'),
+    readJson('certifications.json')
   ]);
 
-  const [site, services, projects, testimonials, faq, stats, team, values] = data;
-  res.render('index', {
-    title: `${site.company} | ${site.tagline}`,
+  res.render('about', {
+    title: `About ${site.company}`,
     site,
-    services,
-    projects,
-    testimonials,
-    faq,
-    stats,
     team,
-    values
+    values,
+    certifications
   });
 });
 

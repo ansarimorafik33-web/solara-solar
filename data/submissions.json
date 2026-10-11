@@ -1,8 +1,1 @@
-{
-  "hours": [
-    { "label": "Monday — Friday", "value": "08:00 — 18:00" },
-    { "label": "Saturday", "value": "09:00 — 13:00" },
-    { "label": "Sunday", "value": "By appointment" }
-  ],
-  "mapLabel": "Solara Studio — Lisbon"
-}
+[]

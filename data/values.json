@@ -1,20 +1,5 @@
 [
-  {
-    "name": "Nora Silva",
-    "role": "Founder & CEO",
-    "image": "/img/placeholder-team-1.svg",
-    "bio": "Leads strategy, design, and growth across premium solar delivery."
-  },
-  {
-    "name": "Mateo Reis",
-    "role": "Head of Engineering",
-    "image": "/img/placeholder-team-2.svg",
-    "bio": "Oversees technical performance, system design, and innovation."
-  },
-  {
-    "name": "Ana Correia",
-    "role": "Customer Experience",
-    "image": "/img/placeholder-team-3.svg",
-    "bio": "Designs the end-to-end client journey from consultation to activation."
-  }
+  { "title": "Precision design", "description": "Every system is engineered for maximum output, elegance, and long-term resilience." },
+  { "title": "Human-led service", "description": "Our local specialists stay involved from first consult through monitoring and support." },
+  { "title": "Measured impact", "description": "We prioritise measurable savings, performance, and carbon outcomes—not empty claims." }
 ]

@@ -1,26 +1,17 @@
 [
   {
-    "name": "North Valley House",
-    "capacity": "32 kW",
-    "location": "Porto, Portugal",
-    "year": 2024,
-    "accent": "Solar + Battery",
-    "image": "/img/placeholder-1.svg"
+    "quote": "Solara designed our roof integration with a level of detail and calm confidence we hadn't seen before. The system feels seamless and beautifully thought through.",
+    "name": "Marta Costa",
+    "role": "Homeowner, Lisbon"
   },
   {
-    "name": "Aster Campus",
-    "capacity": "820 kW",
-    "location": "Lisbon, Portugal",
-    "year": 2023,
-    "accent": "Commercial",
-    "image": "/img/placeholder-2.svg"
+    "quote": "Their commercial team translated a complex energy challenge into a clean, valuable strategy. We saw savings in the first months and zero friction in delivery.",
+    "name": "Julian Rego",
+    "role": "Operations Director, Onda Group"
   },
   {
-    "name": "Coastal Logistics Hub",
-    "capacity": "1.8 MW",
-    "location": "Algarve, Portugal",
-    "year": 2025,
-    "accent": "Industrial",
-    "image": "/img/placeholder-3.svg"
+    "quote": "From consultation to commissioning, everything felt premium, measured, and intentional. It was a true engineering partnership rather than a standard installation.",
+    "name": "Eva Moreira",
+    "role": "Property Developer, Porto"
   }
 ]
