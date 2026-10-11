@@ -1,0 +1,37 @@
+<section class="calculator section-surface alternate" id="calculator">
+  <div class="container calculator-grid">
+    <div class="calculator-copy">
+      <p class="eyebrow">Savings calculator</p>
+      <h2>Forecast your system in seconds.</h2>
+      <div class="calculator-form">
+        <label>
+          <span>Monthly electricity bill</span>
+          <input id="monthlyBill" type="range" min="40" max="600" step="10" value="220" />
+          <output id="billValue">€220</output>
+        </label>
+        <label>
+          <span>Available roof area</span>
+          <input id="roofSize" type="range" min="20" max="200" step="5" value="90" />
+          <output id="roofValue">90 m²</output>
+        </label>
+      </div>
+    </div>
+    <div class="calculator-output">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="46" class="ring-bg"></circle>
+          <circle cx="60" cy="60" r="46" class="ring-progress"></circle>
+        </svg>
+        <div class="ring-center">
+          <span id="systemSize">6.2</span>
+          <small>kW</small>
+        </div>
+      </div>
+      <ul class="result-list">
+        <li><span>Yearly savings</span><strong id="yearlySavings">€3,100</strong></li>
+        <li><span>Payback</span><strong id="payback">6.8 yrs</strong></li>
+        <li><span>CO₂ offset</span><strong id="co2Offset">2.4 t</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>

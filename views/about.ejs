@@ -1,0 +1,72 @@
+<section class="page-hero inner-hero">
+  <div class="container narrow">
+    <p class="eyebrow">About us</p>
+    <h1>Solar designed with clarity and conviction.</h1>
+  </div>
+</section>
+
+<section class="about-story section-surface">
+  <div class="container story-grid">
+    <div>
+      <p>Solara was founded to bring a more considered approach to clean energy. We believe solar should feel integrated, effortless, and intentional — not bolted-on or generic.</p>
+    </div>
+    <div>
+      <p>Our team combines engineering rigor with a human-centered design process, creating solar systems that protect long-term value and elevate the spaces they occupy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="team section-surface alternate">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Team</p>
+      <h2>Experts with a builder mindset.</h2>
+    </div>
+    <div class="team-grid">
+      <% team.forEach(member => { %>
+        <article class="team-card">
+          <img src="<%= member.image %>" alt="<%= member.name %>" loading="lazy" />
+          <div>
+            <h3><%= member.name %></h3>
+            <p><%= member.role %></p>
+            <span><%= member.bio %></span>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="values section-surface">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Values</p>
+      <h2>What we stand for.</h2>
+    </div>
+    <div class="value-grid">
+      <% values.forEach(value => { %>
+        <article class="value-card">
+          <h3><%= value.title %></h3>
+          <p><%= value.description %></p>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="certifications section-surface alternate">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Certifications</p>
+      <h2>Quality and safety are built in.</h2>
+    </div>
+    <ul class="cert-list">
+      <% certifications.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong>
+          <span><%= item.detail %></span>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>

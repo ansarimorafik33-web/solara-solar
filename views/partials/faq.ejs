@@ -1,0 +1,21 @@
+<section class="faq section-surface" id="faq">
+  <div class="container faq-grid">
+    <div class="faq-header">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions that come up early.</h2>
+    </div>
+    <div class="faq-list">
+      <% faq.forEach((item, index) => { %>
+        <article class="faq-item <%= index === 0 ? 'open' : '' %>">
+          <button class="faq-question" type="button" aria-expanded="<%= index === 0 ? 'true' : 'false' %>">
+            <span><%= item.question %></span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <p><%= item.answer %></p>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>

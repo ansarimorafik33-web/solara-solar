@@ -1,0 +1,20 @@
+<section class="services section-surface" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">What we do</p>
+      <h2>Built for modern energy demands.</h2>
+    </div>
+    <div class="services-list">
+      <% services.forEach((service, index) => { %>
+        <article class="service-item" data-service-id="<%= service.id %>">
+          <div class="service-index"><%= service.number %></div>
+          <div class="service-copy">
+            <h3><%= service.title %></h3>
+            <p><%= service.summary %></p>
+          </div>
+          <a href="#" class="service-link">Learn more <span>→</span></a>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>

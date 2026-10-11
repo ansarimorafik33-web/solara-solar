@@ -1,0 +1,42 @@
+<section class="cta-band" id="quote-form">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <p class="eyebrow">Ready to go solar?</p>
+      <h2>Ready to go solar?</h2>
+    </div>
+    <form class="quote-form" data-form-type="quote">
+      <input type="hidden" name="honeypot" />
+      <div class="field-row">
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" required />
+        </label>
+      </div>
+      <div class="field-row">
+        <label>
+          <span>Phone</span>
+          <input name="phone" type="tel" />
+        </label>
+        <label>
+          <span>Property type</span>
+          <select name="propertyType" required>
+            <option value="">Select one</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Industrial">Industrial</option>
+          </select>
+        </label>
+      </div>
+      <label>
+        <span>What are you looking to power?</span>
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button class="button primary" type="submit">Get a free quote</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

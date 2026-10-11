@@ -1,0 +1,49 @@
+<section class="page-hero inner-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Contact</p>
+    <h1>Let’s design your next energy move.</h1>
+  </div>
+</section>
+
+<section class="contact-layout section-surface">
+  <div class="container contact-grid">
+    <div class="contact-card">
+      <form class="quote-form contact-form" data-form-type="contact">
+        <input type="hidden" name="honeypot" />
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="button primary">Send message</button>
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+    <aside class="contact-info">
+      <div class="info-block">
+        <span class="eyebrow">Visit</span>
+        <p><%= site.address %></p>
+      </div>
+      <div class="info-block">
+        <span class="eyebrow">Call</span>
+        <p><a href="tel:+351210000000"><%= site.phone %></a></p>
+      </div>
+      <div class="info-block">
+        <span class="eyebrow">Hours</span>
+        <% contactInfo.hours.forEach(hour => { %>
+          <p><strong><%= hour.label %>:</strong> <%= hour.value %></p>
+        <% }) %>
+      </div>
+      <div class="map-placeholder">
+        <span><%= contactInfo.mapLabel %></span>
+      </div>
+    </aside>
+  </div>
+</section>

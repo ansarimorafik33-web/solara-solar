@@ -1,0 +1,23 @@
+<section class="testimonials section-surface alternate">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Testimonials</p>
+      <h2>Clients who wanted more than a box-ticking install.</h2>
+    </div>
+    <div class="testimonial-slider" aria-live="polite">
+      <% testimonials.forEach((item, idx) => { %>
+        <article class="testimonial active" data-index="<%= idx %>">
+          <blockquote>“<%= item.quote %>”</blockquote>
+          <div class="testimonial-meta">
+            <strong><%= item.name %></strong>
+            <span><%= item.role %></span>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-button prev" type="button" aria-label="Previous testimonial">Prev</button>
+      <button class="slider-button next" type="button" aria-label="Next testimonial">Next</button>
+    </div>
+  </div>
+</section>
