@@ -13,20 +13,29 @@ async function readJson(fileName) {
 }
 
 router.get('/', async (req, res) => {
-  const [site, team, values, certifications] = await Promise.all([
-    readJson('site.json'),
-    readJson('team.json'),
-    readJson('values.json'),
-    readJson('certifications.json')
-  ]);
+  try {
+    const [site, services, projects, testimonials, faq, stats] = await Promise.all([
+      readJson('site.json'),
+      readJson('services.json'),
+      readJson('projects.json'),
+      readJson('testimonials.json'),
+      readJson('faq.json'),
+      readJson('stats.json')
+    ]);
 
-  res.render('about', {
-    title: `About ${site.company}`,
-    site,
-    team,
-    values,
-    certifications
-  });
+    res.render('index', {
+      title: `${site.company} | ${site.tagline}`,
+      site,
+      services,
+      projects,
+      testimonials,
+      faq,
+      stats
+    });
+  } catch (error) {
+    console.error('Failed to load homepage content:', error);
+    res.status(500).render('404', { site: req.app.locals.site, title: 'Content unavailable' });
+  }
 });
 
 export default router;

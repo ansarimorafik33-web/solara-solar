@@ -1,20 +1,10 @@
-[
-  {
-    "name": "Nora Silva",
-    "role": "Founder & CEO",
-    "image": "/img/placeholder-team-1.svg",
-    "bio": "Leads strategy, design, and growth across premium solar delivery."
-  },
-  {
-    "name": "Mateo Reis",
-    "role": "Head of Engineering",
-    "image": "/img/placeholder-team-2.svg",
-    "bio": "Oversees technical performance, system design, and innovation."
-  },
-  {
-    "name": "Ana Correia",
-    "role": "Customer Experience",
-    "image": "/img/placeholder-team-3.svg",
-    "bio": "Designs the end-to-end client journey from consultation to activation."
-  }
-]
+{
+  "mwInstalled": 148,
+  "homesPowered": 24000,
+  "co2Saved": 82000,
+  "labels": [
+    "MW installed",
+    "Homes powered",
+    "Tonnes CO₂ saved"
+  ]
+}

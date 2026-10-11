@@ -1,15 +1,28 @@
-{
-  "company": "Solara",
-  "tagline": "Power the future. Naturally.",
-  "location": "Lisbon, Portugal",
-  "yearFounded": 2023,
-  "description": "Premium solar energy systems, smart storage, and engineering designed for homes, businesses, and the next generation of power.",
-  "email": "hello@solara.energy",
-  "phone": "+351 210 000 000",
-  "address": "Rua do Sol 120, Lisbon 1000-024, Portugal",
-  "socials": [
-    { "label": "Instagram", "href": "https://instagram.com" },
-    { "label": "LinkedIn", "href": "https://linkedin.com" },
-    { "label": "X / Twitter", "href": "https://x.com" }
-  ]
+import express from 'express';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const router = express.Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const dataDir = path.join(__dirname, '..', 'data');
+
+async function readJson(fileName) {
+  return JSON.parse(await fs.readFile(path.join(dataDir, fileName), 'utf8'));
 }
+
+router.get('/', async (req, res) => {
+  const [site, contactInfo] = await Promise.all([
+    readJson('site.json'),
+    readJson('contact.json')
+  ]);
+
+  res.render('contact', {
+    title: `Contact ${site.company}`,
+    site,
+    contactInfo
+  });
+});
+
+export default router;
