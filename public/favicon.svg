@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Solara favicon">
+  <rect width="64" height="64" rx="16" fill="#0A0A0A"/>
+  <circle cx="32" cy="32" r="15" fill="#FF5A00"/>
+  <path d="M32 7.5v6M32 50.5v6M56.5 32h-6M13.5 32h-6M49.5 14.5l-4.2 4.2M18.7 45.3l-4.2 4.2M49.5 49.5l-4.2-4.2M18.7 18.7l-4.2-4.2" stroke="#FAFAF7" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
