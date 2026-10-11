@@ -1,0 +1,26 @@
+{
+  "name": "solara-solar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.2",
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.0.1",
+    "gsap": "^3.12.5",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "three": "^0.171.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.16"
+  }
+}

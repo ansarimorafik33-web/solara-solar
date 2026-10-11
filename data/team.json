@@ -1,0 +1,10 @@
+{
+  "mwInstalled": 148,
+  "homesPowered": 24000,
+  "co2Saved": 82000,
+  "labels": [
+    "MW installed",
+    "Homes powered",
+    "Tonnes CO₂ saved"
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "residential",
+    "number": "01",
+    "title": "Residential",
+    "summary": "Custom rooftop systems that look sharp, perform quietly, and reduce energy bills from day one.",
+    "details": "Premium design, engineering, and installation for modern homes and heritage properties."
+  },
+  {
+    "id": "commercial",
+    "number": "02",
+    "title": "Commercial",
+    "summary": "Megawatt-scale energy strategy for offices, retail, logistics, and industrial sites.",
+    "details": "Operational savings, lower carbon footprint, and resilient clean-power infrastructure."
+  },
+  {
+    "id": "storage",
+    "number": "03",
+    "title": "Storage",
+    "summary": "Battery systems that store excess generation and protect against grid instability.",
+    "details": "Smart dispatch, load shifting, and backup resilience with intelligent monitoring."
+  },
+  {
+    "id": "ev",
+    "number": "04",
+    "title": "EV Charging",
+    "summary": "Solar-driven charging for residential communities, fleets, and premium workplaces.",
+    "details": "Fast-charge stations and integrated energy planning for a lower-carbon mobility future."
+  },
+  {
+    "id": "maintenance",
+    "number": "05",
+    "title": "Maintenance",
+    "summary": "Ongoing monitoring, diagnostics, and performance tuning to protect long-term returns.",
+    "details": "Preventive maintenance and performance optimization across every generation asset."
+  }
+]
