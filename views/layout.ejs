@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <meta name="description" content="<%= site.description %>" />
+    <meta property="og:title" content="<%= site.company %> | <%= site.tagline %>" />
+    <meta property="og:description" content="<%= site.description %>" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="page-shell">
+      <div class="noise"></div>
+      <%- include('partials/header') %>
+      <main id="main-content">
+        <%- body %>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>
